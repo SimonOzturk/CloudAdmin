@@ -1,0 +1,68 @@
+{
+    "Name": "OzturkOnline",
+    "Domain": "ozturkonline.onmicrosoft.com",
+    "AzureAD": {
+        "Domain": "ozturkonline.onmicrosoft.com",
+        "Admin": {
+            "UserName": "Admin@ozturkonline.onmicrosoft.com",
+            "Password": "Pa$$w0rd",
+            "Credential": "$null"
+        }
+    },
+    "SharePoint": {
+        "Url": "https://ozturkonline.sharepoint.com/",
+        "Admin": {
+            "Url": "https://ozturkonline-admin.sharepoint.com/",
+            "UserName": "Admin@ozturkonline.onmicrosoft.com",
+            "Password": "Pa$$w0rd",
+            "Credential": "$null"
+        }
+    },
+    "Exchange": {
+        "ConnectionUri": "https://outlook.office365.com/powershell-liveid/",
+        "ConfigurationName": "Microsoft.Exchange",
+        "Admin": {
+            "UserName": "Admin@ozturkonline.onmicrosoft.com",
+            "Password": "Pa$$w0rd",
+            "Credential": "$null"
+        }
+    },
+    "Complience": {
+        "ConnectionUri": "https://ps.compliance.protection.outlook.com/powershell-liveid/",
+        "ConfigurationName": "Microsoft.Exchange",
+        "Admin": {
+            "UserName": "Admin@ozturkonline.onmicrosoft.com",
+            "Password": "Pa$$w0rd",
+            "Credential": "$null"
+        }
+    },
+    "Teams": {
+        "Url": "https://ps.compliance.protection.outlook.com/powershell-liveid/",
+        "Admin": {
+            "UserName": "Admin@ozturkonline.onmicrosoft.com",
+            "Password": "Pa$$w0rd",
+            "Credential": "$null"
+        }
+    },
+    "PowerApps": {
+        "Url": "https://ps.compliance.protection.outlook.com/powershell-liveid/",
+        "Admin": {
+            "UserName": "Admin@ozturkonline.onmicrosoft.com",
+            "Password": "Pa$$w0rd",
+            "Credential": "$null"
+        },
+        "Location": {
+            "NorthAmerica": "https://admin.services.crm.dynamics.com",
+            "NorthAmerica2": "https://admin.services.crm9.dynamics.com",
+            "Europe": "https://admin.services.crm4.dynamics.com",
+            "AsiaPacific": "https://admin.services.crm5.dynamics.com",
+            "Oceania": "https://admin.services.crm6.dynamics.com",
+            "Japan": "https://admin.services.crm7.dynamics.com",
+            "SouthAmerica": "https://admin.services.crm2.dynamics.com",
+            "India": "https://admin.services.crm8.dynamics.com",
+            "Canada": "https://admin.services.crm3.dynamics.com",
+            "UnitedKingdom": "https://admin.services.crm11.dynamics.com",
+            "France": "https://admin.services.crm12.dynamics.com"
+        }
+    }
+}
