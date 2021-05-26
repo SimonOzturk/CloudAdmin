@@ -29,3 +29,11 @@ This command sets the installation policy for the PSGallery repository to Truste
 ```powershell
 Set-PSRepository -Name 'PSGallery' -InstallationPolicy Trusted
 ```
+
+### Policy
+
+> The Set-ExecutionPolicy cmdlet changes PowerShell execution policies for Windows computers. For more information [Set-ExecutionPolicy](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-7.1)
+
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
+```
