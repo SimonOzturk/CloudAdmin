@@ -1,6 +1,7 @@
 {
     "Name": "XXXX",
     "Domain": "XXXX.onmicrosoft.com",
+    "Url":"https://admin.microsoft.com",
     "AzureAD": {
         "Domain": "XXXX.onmicrosoft.com",
         "Admin": {
@@ -45,8 +46,9 @@
         }
     },
     "PowerApps": {
-        "Url": "https://ps.compliance.protection.outlook.com/powershell-liveid/",
+        "Url": "https://make.powerapps.com",
         "Admin": {
+            "Url":"https://admin.powerplatform.microsoft.com",
             "UserName": "UUUU@XXXX.onmicrosoft.com",
             "Password": "PPPP",
             "Credential": "$null"
