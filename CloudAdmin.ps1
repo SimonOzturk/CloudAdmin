@@ -34,7 +34,6 @@ $Tenant.Teams.Admin.Credential = [PSCredential]::new($Tenant.Teams.Admin.UserNam
 $Tenant.PowerApps.Admin.Credential = [PSCredential]::new($Tenant.PowerApps.Admin.UserName, (ConvertTo-SecureString $Tenant.PowerApps.Admin.Password -AsPlainText -Force ))
 
 Connect-MsolService -Credential $Tenant.AzureAD.Admin.Credential
-Connect-MsolServices
 Connect-AzureAD -Credential $Tenant.AzureAD.Admin.Credential
 Connect-SPOService -Credential $Tenant.SharePoint.Admin.Credential -Url $Tenant.SharePoint.Admin.Url
 Connect-PnPOnline -Url $Tenant.SharePoint.Admin.Url -UseWebLogin 
