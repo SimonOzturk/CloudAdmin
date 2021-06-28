@@ -1,5 +1,5 @@
-use namespace System.Management.Automation
-use namespace System.Net
+using namespace System.Management.Automation
+using namespace System.Net
 
 [ServicePointManager]::SecurityProtocol = [SecurityProtocolType]::Tls12
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned 
