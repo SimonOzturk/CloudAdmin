@@ -10,7 +10,7 @@
 [PowerShell Gallery TLS Support](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/)
 
 ```powershell
-use namespace System.Net
+using namespace System.Net
 [ServicePointManager]::SecurityProtocol = [SecurityProtocolType]::Tls12
 ```
 
