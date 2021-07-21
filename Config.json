@@ -1,21 +1,32 @@
 {
-    "Name": "XXXX",
-    "Domain": "XXXX.onmicrosoft.com",
-    "Url":"https://admin.microsoft.com",
+    "ID": "<TenantID>",
+    "Name": "<TenantPrefix>",
+    "Domain": "<TenantPrefix>.onmicrosoft.com",
+    "Url": "https://admin.microsoft.com",
+    "Graph": {
+        "Url": "https://login.microsoftonline.com/<TenantID>/oauth2/v2.0/token",
+        "Token": "",
+        "OAuth": {
+            "Grant_Type": "client_credentials",
+            "Scope": "https://graph.microsoft.com/.default",
+            "Client_Id": "<ClientID>",
+            "Client_Secret": "<ClientSecret>"
+        }
+    },
     "AzureAD": {
-        "Domain": "XXXX.onmicrosoft.com",
+        "Domain": "<TenantPrefix>.onmicrosoft.com",
         "Admin": {
-            "UserName": "UUUU@XXXX.onmicrosoft.com",
-            "Password": "PPPP",
+            "UserName": "<Account>@<TenantPrefix>.onmicrosoft.com",
+            "Password": "<Password>",
             "Credential": "$null"
         }
     },
     "SharePoint": {
-        "Url": "https://XXXX.sharepoint.com/",
+        "Url": "https://<TenantPrefix>.sharepoint.com/",
         "Admin": {
-            "Url": "https://XXXX-admin.sharepoint.com/",
-            "UserName": "UUUU@XXXX.onmicrosoft.com",
-            "Password": "PPPP",
+            "Url": "https://<TenantPrefix>-admin.sharepoint.com/",
+            "UserName": "<Account>@<TenantPrefix>.onmicrosoft.com",
+            "Password": "<Password>",
             "Credential": "$null"
         }
     },
@@ -23,8 +34,8 @@
         "ConnectionUri": "https://outlook.office365.com/powershell-liveid/",
         "ConfigurationName": "Microsoft.Exchange",
         "Admin": {
-            "UserName": "UUUU@XXXX.onmicrosoft.com",
-            "Password": "PPPP",
+            "UserName": "<Account>@<TenantPrefix>.onmicrosoft.com",
+            "Password": "<Password>",
             "Credential": "$null"
         }
     },
@@ -32,25 +43,25 @@
         "ConnectionUri": "https://ps.compliance.protection.outlook.com/powershell-liveid/",
         "ConfigurationName": "Microsoft.Exchange",
         "Admin": {
-            "UserName": "UUUU@XXXX.onmicrosoft.com",
-            "Password": "PPPP",
+            "UserName": "<Account>@<TenantPrefix>.onmicrosoft.com",
+            "Password": "<Password>",
             "Credential": "$null"
         }
     },
     "Teams": {
         "Url": "https://ps.compliance.protection.outlook.com/powershell-liveid/",
         "Admin": {
-            "UserName": "UUUU@XXXX.onmicrosoft.com",
-            "Password": "PPPP",
+            "UserName": "<Account>@<TenantPrefix>.onmicrosoft.com",
+            "Password": "<Password>",
             "Credential": "$null"
         }
     },
     "PowerApps": {
         "Url": "https://make.powerapps.com",
         "Admin": {
-            "Url":"https://admin.powerplatform.microsoft.com",
-            "UserName": "UUUU@XXXX.onmicrosoft.com",
-            "Password": "PPPP",
+            "Url": "https://admin.powerplatform.microsoft.com",
+            "UserName": "<Account>@<TenantPrefix>.onmicrosoft.com",
+            "Password": "<Password>",
             "Credential": "$null"
         },
         "Location": {

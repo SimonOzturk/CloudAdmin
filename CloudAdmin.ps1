@@ -40,3 +40,6 @@ Connect-PnPOnline -Url $Tenant.SharePoint.Admin.Url -UseWebLogin
 Connect-MicrosoftTeams -Credential $Tenant.Teams.Admin.Credential  
 Add-PowerAppsAccount -Endpoint prod -Username $Tenant.PowerApps.Admin.UserName -Password (ConvertTo-SecureString $Tenant.PowerApps.Admin.Password -AsPlainText -Force )
 
+<# Microsoft Graph from PowerShell #>
+$Tenant.Graph.Token = (Invoke-RestMethod -Method Post -Uri $Tenant.Graph.Url -Body $Tenant.Graph.OAuth ).access_token
+(Invoke-RestMethod -Method Get -Uri "https://graph.microsoft.com/v1.0/groups" -Headers @{Authorization = "Bearer $($Tenant.Graph.Token)"}).value
