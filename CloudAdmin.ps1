@@ -6,7 +6,8 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
 Set-PSRepository -Name 'PSGallery' -InstallationPolicy Trusted
 
 Install-Module -Name 'MSOnline' -Confirm:$false -Force
-Install-Module -Name 'AzureAD' -Confirm:$false -Force
+#Install-Module -Name 'AzureAD' -Confirm:$false -Force
+Install-Module -Name 'AzureADPreview' -Confirm:$false -Force
 Install-Module -Name 'Microsoft.Online.SharePoint.PowerShell' -Confirm:$false -Force
 Install-Module -Name 'PnP.PowerShell' -Confirm:$false -Force
 Install-Module -Name 'MicrosoftTeams' -Confirm:$false -Force
@@ -43,3 +44,17 @@ Add-PowerAppsAccount -Endpoint prod -Username $Tenant.PowerApps.Admin.UserName -
 <# Microsoft Graph from PowerShell #>
 $Tenant.Graph.Token = (Invoke-RestMethod -Method Post -Uri $Tenant.Graph.Url -Body $Tenant.Graph.OAuth ).access_token
 (Invoke-RestMethod -Method Get -Uri "https://graph.microsoft.com/v1.0/groups" -Headers @{Authorization = "Bearer $($Tenant.Graph.Token)"}).value
+
+New-MsolGroup -ManagedBy "admin@domain.com"  -DisplayName "GroupCreators" -Description "Members of this group allow to Create Microsoft 365 Group"
+
+$Template = Get-AzureADDirectorySettingTemplate | Where-Object {$_.DisplayName -eq "Group.Unified"}
+if(!($Setting = Get-AzureADDirectorySetting | Where-Object {$_.TemplateId -eq $Template.Id})) 
+{
+    $Setting = $Template.CreateDirectorySetting()
+}
+$Setting["EnableGroupCreation"] = "False"
+$Setting["GroupCreationAllowedGroupId"] = (Get-AzureADGroup -SearchString "GroupCreators").objectid
+$Setting["EnableMIPLabels"] = "True" 
+$Setting.Values
+#New-AzureADDirectorySetting -DirectorySetting $Setting
+Set-AzureADDirectorySetting -DirectorySetting $Setting
